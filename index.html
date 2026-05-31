@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Custom Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="top-banner">
+        <div class="logo">Ko<span class="gradient-text">vast</span></div>
+        <div class="filter-menu">
+            <button class="filter-btn active">
+                <i data-lucide="sparkles" class="icon"></i> All Services
+            </button>
+            <button class="filter-btn">
+                <i data-lucide="tv-2" class="icon"></i> Movies & TV
+            </button>
+            <button class="filter-btn">
+                <i data-lucide="music" class="icon"></i> Music
+            </button>
+            <button class="filter-btn">
+                <i data-lucide="gamepad-2" class="icon"></i> Gaming
+            </button>
+            <button class="filter-btn">
+                <i data-lucide="trophy" class="icon"></i> Sports
+            </button>
+            <button class="filter-btn">
+                <i data-lucide="shield-check" class="icon"></i> VPN & Privacy
+            </button>
+        </div>
+    </div>
+    <div id="card-container" class="card-container"></div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

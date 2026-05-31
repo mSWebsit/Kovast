@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Crucial: ensures paddings don't break grid sizing */
+}
+
+body {
+    background-image: url(images/bg_image.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps background static while scrolling */
+    min-height: 100vh;
+}
+
+.top-banner {
+    background-color: #0b0c0e;
+    padding: 16px;
+}
+
+.logo {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    padding-bottom: 10px;
+}
+
+.logo .gradient-text {
+    background: linear-gradient(135deg, #5b62f4, #a02bf3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.filter-menu {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; /* Smooth mobile momentum scroll */
+}
+
+/* Hide scrollbar for clean horizontal tab navigation layout */
+.filter-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #16181c;
+    color: #98a0b3;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: #22252a;
+    color: #ffffff;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #5b62f4, #a02bf3);
+    color: #ffffff;
+    border: 1px transparent;
+    box-shadow: 0 4px 12px rgba(160, 43, 243, 0.3);
+}
+
+.filter-btn .icon {
+    width: 16px;
+    height: 16px;
+    stroke-width: 2px;
+    display: flex;
+    align-items: center;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
+    gap: 20px;
+    padding: 20px;
+    margin: 12px 0px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.service-card {
+    width: 100%; 
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Pairs with flex content below for equal height match cards */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Clean up structural banner elements */
+.card-banner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 16px;
+    height: 120px;
+}
+
+.banner-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    width: 65%;
+}
+
+.tags-wrapper {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: auto; /* Pushes tags to the top edge naturally */
+}
+
+.tag {
+    font-size: 9px;
+    font-weight: 800;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.18);
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* Title text flow adjustment */
+.card-title {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    margin-top: 8px;
+}
+
+/* Right side brand badge container */
+.brand-badge {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    width: 80px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    flex-shrink: 0; /* Prevents badge from morphing/shrinking on small mobile spaces */
+}
+
+/* Bottom dynamic flex content card */
+.card-content {
+    padding: 20px;
+    background-color: #0C0C0C;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1; /* Pushes bottom buttons inline on unequal text heights */
+}
+
+.card-desc {
+    font-size: 15px;
+    font-weight: 600;
+    color: #9B9B9B;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-top: auto; /* Smart-push price & button down layout context blocks */
+}
+
+/* Fixed CTA Button: Scalable fluid padding structure */
+.card-btn {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 15px;
+    transition: background-color 0.2s, color 0.2s;
+    width: 100%; /* Fully spans item grid box columns flawlessly */
+    text-align: center;
+}
+
+.card-btn:hover {
+    background-color: #00C144;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        /* Forces exactly 2 cards on one line */
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px; 
+        padding: 10px;
+        margin: 4px 0px;
+    }
+    
+    .card-banner {
+        height: 100px;
+        padding: 12px;
+    }
+    
+    .card-title {
+        font-size: 16px; 
+    }
+    
+    .brand-badge {
+        width: 65px;
+        height: 40px;
+        font-size: 12px;
+    }
+    
+    .card-content {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .card-desc {
+        font-size: 13px;
+        line-height: 1.3;
+    }
+    
+    .card-price {
+        font-size: 15px;
+    }
+    
+    .card-btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* Micro-device protection loop breaker */
+@media (max-width: 480px) {
+    .card-container {
+        /* Prevents content layout from becoming illegible on extremely narrow widths */
+        grid-template-columns: 1fr; 
+    }
+}
