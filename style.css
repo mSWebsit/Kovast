@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Crucial: ensures paddings don't break grid sizing */
+    box-sizing: border-box;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; /* Keeps background static while scrolling */
+    background-attachment: fixed;
     min-height: 100vh;
 }
 
@@ -39,10 +39,9 @@ body {
     gap: 12px;
     overflow-x: auto;
     white-space: nowrap;
-    -webkit-overflow-scrolling: touch; /* Smooth mobile momentum scroll */
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Hide scrollbar for clean horizontal tab navigation layout */
 .filter-menu::-webkit-scrollbar {
     display: none;
 }
@@ -99,14 +98,13 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
     display: flex;
-    flex-direction: column; /* Pairs with flex content below for equal height match cards */
+    flex-direction: column; 
 }
 
 .service-card:hover {
     transform: translateY(-10px);
 }
 
-/* Clean up structural banner elements */
 .card-banner {
     position: relative;
     display: flex;
@@ -128,7 +126,7 @@ body {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: auto; /* Pushes tags to the top edge naturally */
+    margin-bottom: auto;
 }
 
 .tag {
@@ -143,7 +141,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Title text flow adjustment */
 .card-title {
     color: #ffffff;
     font-size: 22px;
@@ -154,7 +151,6 @@ body {
     margin-top: 8px;
 }
 
-/* Right side brand badge container */
 .brand-badge {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
@@ -165,17 +161,16 @@ body {
     justify-content: center;
     font-weight: bold;
     font-size: 16px;
-    flex-shrink: 0; /* Prevents badge from morphing/shrinking on small mobile spaces */
+    flex-shrink: 0; 
 }
 
-/* Bottom dynamic flex content card */
 .card-content {
     padding: 20px;
     background-color: #0C0C0C;
     display: flex;
     flex-direction: column;
     gap: 12px;
-    flex-grow: 1; /* Pushes bottom buttons inline on unequal text heights */
+    flex-grow: 1;
 }
 
 .card-desc {
@@ -190,10 +185,9 @@ body {
     font-size: 18px;
     font-weight: 700;
     color: white;
-    margin-top: auto; /* Smart-push price & button down layout context blocks */
+    margin-top: auto;
 }
 
-/* Fixed CTA Button: Scalable fluid padding structure */
 .card-btn {
     background-color: #ffffff;
     color: #1a1a1a;
@@ -204,8 +198,9 @@ body {
     font-weight: 800;
     font-size: 15px;
     transition: background-color 0.2s, color 0.2s;
-    width: 100%; /* Fully spans item grid box columns flawlessly */
+    width: 100%; 
     text-align: center;
+    text-decoration: none;
 }
 
 .card-btn:hover {
@@ -215,7 +210,6 @@ body {
 
 @media (max-width: 768px) {
     .card-container {
-        /* Forces exactly 2 cards on one line */
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 10px; 
         padding: 10px;
@@ -256,11 +250,8 @@ body {
         font-size: 13px;
     }
 }
-
-/* Micro-device protection loop breaker */
 @media (max-width: 480px) {
     .card-container {
-        /* Prevents content layout from becoming illegible on extremely narrow widths */
         grid-template-columns: 1fr; 
     }
 }
