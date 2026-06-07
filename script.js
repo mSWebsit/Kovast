@@ -254,7 +254,8 @@ const Services = [
 ];
 
 const container = document.getElementById('card-container');
-
+const whatsappPhoneNumber = "96171239913"; // REPLACE WITH YOUR ACTUAL PHONE NUMBER
+const defaultWhatsappMessage = "Hello, I'm interested in your services!";
 
 function CreateCard(service) {
     const card = document.createElement('div');
@@ -309,13 +310,17 @@ function CreateCard(service) {
     priceText.classList.add('card-price');
     priceText.innerText = `$${service.price}/mo`;
 
-    const button = document.createElement('button');
-    button.classList.add('card-btn');
-    button.innerText = "Contact us on Whatsapp";
+    const whatsappLink = document.createElement('a');
+    whatsappLink.classList.add('card-btn'); 
+    whatsappLink.innerText = "Contact us on Whatsapp";
+
+    const message = encodeURIComponent(`Hi, I'm interested in the ${service.name}.`);
+    whatsappLink.href = `https://wa.me/${whatsappPhoneNumber}?text=${message}`;
+    whatsappLink.target = "_blank"; // Open in a new tab
 
     content.appendChild(desc);
     content.appendChild(priceText);
-    content.appendChild(button);
+    content.appendChild(whatsappLink);
 
     card.appendChild(banner);
     card.appendChild(content);
